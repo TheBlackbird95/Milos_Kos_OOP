@@ -31,16 +31,20 @@ public class Alpinista extends Planinar{
     @Override
     public double clanarina() {
         int brojac = 0;
-        for (Planina planina : getPlanine()){
-            if (planina.getVisina()>2000){
+        for (Planina planina : getPlanine()) {
+            if (planina.getVisina() > 2000) {
                 brojac++;
             }
         }
+        if (brojac > 20) {
+            return 0;
+        } else {
 //        double cena = 1500;
 //        for (int i = 0; i < brojac; i++) {
 //            cena = cena * 0.95;
 //        }
-        double popust = 5 * brojac;
-        return 1500 - 1500 * popust / 100;
+            double popust = 5 * brojac;
+            return 1500 - 1500 * popust / 100;
+        }
     }
 }

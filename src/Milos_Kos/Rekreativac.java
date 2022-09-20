@@ -31,6 +31,10 @@ public class Rekreativac extends Planinar {
     @Override
     public double clanarina() {
         double popust = 2 * getPlanine().size();
-        return 1000 - 1000 * popust / 100;
+        if (getPlanine().size() > 50) {
+            return 0;
+        } else {
+            return 1000 - 1000 * popust / 100;
+        }
     }
 }
